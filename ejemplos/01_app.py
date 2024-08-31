@@ -5,6 +5,7 @@ curl http://localhost:11434/api/generate -d '{
   "stream": false
 }'
 """
+
 import requests
 import json
 
@@ -15,7 +16,11 @@ data = {
     "stream": False
   }
 
-response = requests.post(url, json = data)
+  headers = {
+    "Content-Type: application/json"
+  }
+
+response = requests.post(url, json = data,headers= headers)
 
 response = json.loads(response.text)
 
