@@ -36,13 +36,35 @@ curl -X POST http://localhost:11434/api/generate -d '{
 ## 4.1 Prueba de Request a la API de OLLAMA, sin streaming
 
 ````bash
-curl -X POST http://localhost:11434/api/generate -d '{
+curl http://localhost:11434/api/generate -d '{
   "model": "tinyllama",
-  "prompt": "Why is the sky blue?"
-  "stream: false"
+  "prompt": "Why is the sky blue?",
+  "stream": false
 }'
 ````
 ## Comandos
+````bash
 git add .
 git commit -m "Update README.md"
 git push -u origin main
+````
+````curl
+"https://api.groq.com
+````
+## 6. Request a groq
+````bash
+curl "https://api.groq.com/openai/v1/chat/completions" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${GROQ_API_KEY}" \
+  -d '{
+         "messages": [
+           {
+             "role": "user",
+             "content": "¿Porque el cielo es azul?"
+           }
+         ],
+         "model": "gemma-7b-it",
+         "stream": false
+       }'
+````
