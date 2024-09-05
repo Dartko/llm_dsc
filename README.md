@@ -68,3 +68,8 @@ curl "https://api.groq.com/openai/v1/chat/completions" \
          "stream": false
        }'
 ````
+````bash
+python3 -m http.server 8080
+salvadorhm@utectulancingo.edu.mx
+salvadorhm@gmail.com
+````
